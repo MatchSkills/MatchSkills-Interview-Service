@@ -9,7 +9,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class Anchor {
+public class AnchorEntity {
 
     private Integer level;
     private String description;

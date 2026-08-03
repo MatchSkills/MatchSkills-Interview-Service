@@ -1,6 +1,6 @@
 package com.matchskills.jobapplication.service.services;
 
-import com.matchskills.jobapplication.service.entitys.Softskill;
+import com.matchskills.jobapplication.service.entitys.SoftskillEntity;
 import com.matchskills.jobapplication.service.exceptions.customs.softskills.SoftskillNotFoundException;
 import com.matchskills.jobapplication.service.repositorys.SoftskillRepository;
 import org.springframework.stereotype.Service;
@@ -16,15 +16,15 @@ public class SoftskillService {
         this.repository = repository;
     }
 
-    public Softskill create(Softskill softskill) {
-        return repository.save(softskill);
+    public SoftskillEntity create(SoftskillEntity softskillEntity) {
+        return repository.save(softskillEntity);
     }
 
-    public List<Softskill> getAll() {
+    public List<SoftskillEntity> getAll() {
         return repository.findAll();
     }
 
-    public Softskill getByName(String name) {
+    public SoftskillEntity getByName(String name) {
         return repository.findByName(name)
                 .orElseThrow(SoftskillNotFoundException::new);
     }

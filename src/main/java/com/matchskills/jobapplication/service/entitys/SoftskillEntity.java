@@ -12,12 +12,12 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
-public class Softskill {
+public class SoftskillEntity {
 
     @Id
     private String id;
     private String name;
     private String description;
-    private List<Anchor> anchots;
+    private List<AnchorEntity> anchots;
     private List<String> questions;
 }
