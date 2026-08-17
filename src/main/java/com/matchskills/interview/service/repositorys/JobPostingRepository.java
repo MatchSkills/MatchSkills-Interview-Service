@@ -1,0 +1,14 @@
+package com.matchskills.interview.service.repositorys;
+
+import com.matchskills.interview.service.entitys.JobPostingEntity;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface JobPostingRepository extends JpaRepository<JobPostingEntity, Long> {
+
+    Page<JobPostingEntity> findAllByCompanyId(Long id, Pageable pageable);
+
+}
