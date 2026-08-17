@@ -8,7 +8,4 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface JobPostingRepository extends JpaRepository<JobPostingEntity, Long> {
-
-    Page<JobPostingEntity> findAllByCompanyId(Long id, Pageable pageable);
-
 }
