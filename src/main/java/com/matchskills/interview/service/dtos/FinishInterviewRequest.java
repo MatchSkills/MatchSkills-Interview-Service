@@ -13,6 +13,7 @@ import java.util.Map;
 public class FinishInterviewRequest {
 
     private Long jobApplicationId;
+    private Long jobPostingId;
     private List<Map<String, String>> questionsAndAnswers;
 
 }
