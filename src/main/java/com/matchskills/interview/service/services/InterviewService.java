@@ -71,7 +71,7 @@ public class InterviewService {
         String internalTokenAI = internalTokenProvider.generate("interview-service");
 
         var resultsAi = restClient.post()
-                .uri(iaServiceUrl + "ai/extract-softskills")
+                .uri(iaServiceUrl + "/ai/extract-softskills")
                 .header("X-Internal-Token", internalTokenAI)
                 .body(finishInterviewRequest)
                 .retrieve()
@@ -80,10 +80,11 @@ public class InterviewService {
         String internalTokenJobApplication = internalTokenProvider.generate("interview-service");
 
         restClient.put()
-                .uri(iaServiceUrl + "job-application/edit-softskills")
+                .uri( iaJobApplicationUrl + "/job-application/edit-softskills")
                 .header("X-Internal-Token", internalTokenJobApplication)
                 .body(new EditSoftSkillsRequest(finishInterviewRequest.getJobApplicationId(),resultsAi.getResults()))
-                .retrieve();
+                .retrieve()
+                .toBodilessEntity(); ;
     }
 
 }
